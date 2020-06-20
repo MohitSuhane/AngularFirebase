@@ -1,0 +1,6 @@
+<app-header></app-header>
+<input type="file" (change)="uploadFile($event)" />
+<br />
+<button type="button" (click)="downloadImage()">Download</button>
+<br />
+<img [src]="profileUrl | async" alt="Image" />
