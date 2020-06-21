@@ -23,8 +23,10 @@ import { RegisterComponent } from "./register/register.component";
 import { AuthService } from "./core/auth.service";
 
 // firebase
-import {AngularFireModule} from "@angular/fire"
-import {environment} from "../environments/environment";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import { environment } from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import {environment} from "../environments/environment";
     AngularFireModule.initializeApp(
       environment.firebaseConfig,
       "united-ui-live"
-    )
+    ),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
   ],
   providers: [AuthService, ShoppingListService, RecipeService],
   bootstrap: [AppComponent],

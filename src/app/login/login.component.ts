@@ -26,4 +26,35 @@ export class LoginComponent {
       password: ["", Validators.required],
     });
   }
+
+  tryLogin(data) {
+    this.authService.doLogin(data).then(
+      (res) => {
+        this.router.navigate(["/recipes"], { replaceUrl: true });
+      },
+      (err) => {}
+    );
+  }
+
+  tryGoogleLogin() {
+    this.authService.doGoogleLogin().then(
+      (res) => {
+        this.router.navigate(["/recipes"], { replaceUrl: true });
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  tryFacebookLogin() {
+    this.authService.doFacebookLogin().then(
+      (res) => {
+        this.router.navigate(["/recipes"], { replaceUrl: true });
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 }

@@ -13,4 +13,15 @@ export class HeaderComponent {
     public authService: AuthService,
     private router: Router
   ) {}
+
+  tryLogout(data) {
+    this.authService.doLogout(data).then(
+      (res) => {
+        this.router.navigate(["/login"]);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 }

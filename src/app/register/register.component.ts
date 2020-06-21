@@ -27,4 +27,28 @@ export class RegisterComponent {
       password: ["", Validators.required],
     });
   }
+
+  tryRegister(data) {
+    this.authService.doRegister(data).then(
+      (res) => {
+        this.errorMessage = "";
+        this.successMessage = "Your account is registered";
+      },
+      (err) => {
+        this.errorMessage = err.message;
+        this.successMessage = "";
+      }
+    );
+  }
+
+  tryGoogleLogin() {
+    this.authService.doGoogleLogin().then(
+      (res) => {
+        this.router.navigate(["/recipes"], { replaceUrl: true });
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 }
