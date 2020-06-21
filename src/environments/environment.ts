@@ -4,6 +4,16 @@
 
 export const environment = {
   production: false,
+  firebaseConfig : {
+  apiKey: "AIzaSyC4WZTslz67pVLhy8uApaf9lKe0wqMlsDw",
+  authDomain: "united-ui-live.firebaseapp.com",
+  databaseURL: "https://united-ui-live.firebaseio.com",
+  projectId: "united-ui-live",
+  storageBucket: "united-ui-live.appspot.com",
+  messagingSenderId: "258235361726",
+  appId: "1:258235361726:web:a9541364e896ca1720f1ef",
+  measurementId: "G-RL52QVS7F8"
+}
 };
 
 /*

@@ -22,6 +22,10 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { AuthService } from "./core/auth.service";
 
+// firebase
+import {AngularFireModule} from "@angular/fire"
+import {environment} from "../environments/environment";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +49,10 @@ import { AuthService } from "./core/auth.service";
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(
+      environment.firebaseConfig,
+      "united-ui-live"
+    )
   ],
   providers: [AuthService, ShoppingListService, RecipeService],
   bootstrap: [AppComponent],
